@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="walk">#293054</color>
+    <color name="bus">#FFC107</color>
+    <color name="metro">#D82F69</color>
+    <color name="lightBlue">#03A9F4</color>
+    <color name="lighterBlue">#B5E8F4</color></resources>

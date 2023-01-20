@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MapActivity" />
+
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_round_image"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_marginStart="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_remove"
+            app:tint="#F6FBFA" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:id="@+id/ll_steps_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/mcv_container">
+
+                <ImageView
+                    android:id="@+id/iv_origin_dot"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="#FB480F" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#706A6A" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#706A6A" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#706A6A" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#706A6A" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#706A6A" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_metro"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="8dp">
+
+                    <ImageView
+                        android:id="@+id/iv_metro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/ic_metro" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="#706A6A" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_metro1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="8dp">
+
+                    <ImageView
+                        android:id="@+id/iv_metro1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/ic_metro" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#706A6A" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#706A6A" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#706A6A" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#706A6A" />
+
+                <ImageView
+                    android:id="@+id/iv_destination_dot"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="#0F2567" />
+
+            </LinearLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_direction"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#A5BAC4"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="@id/mcv_container"
+                app:layout_constraintTop_toTopOf="@+id/mcv_container">
+
+                <ImageView
+                    android:id="@+id/iv_direction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_direction"
+                    app:tint="@color/white" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#FAF9F9"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ll_steps_container"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_source_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="6dp"
+                        android:text="Source"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_source"
+                        app:layout_constraintStart_toStartOf="@+id/tv_source"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_source"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="1"
+                        android:singleLine="true"
+                        android:text="HRBR Layout 1st Block, Kalyan Nagar, Bangalore"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/mcv_walk"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginBottom="10dp"
+                            android:backgroundTint="@color/black"
+                            android:outlineSpotShadowColor="@color/white"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="8dp"
+                            app:strokeColor="@color/white">
+
+                            <ImageView
+                                android:id="@+id/iv_walk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:src="@drawable/ic_walk"
+                                app:tint="@color/white" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/tv_walk_distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-> 04 mins -> 232 Mtr"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_container_get_in"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#FAF9F9"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/mcv_container"
+                app:layout_constraintTop_toBottomOf="@+id/mcv_container">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="6dp"
+                        android:text="Get In Station"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_source"
+                        app:layout_constraintStart_toStartOf="@+id/tv_source"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_get_in_station"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="1"
+                        android:singleLine="true"
+                        android:text="CS-Corporation Bank Kammanahalli"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginBottom="10dp"
+                            android:backgroundTint="@color/black"
+                            android:outlineSpotShadowColor="@color/white"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="8dp"
+                            app:strokeColor="@color/white">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:src="@drawable/ic_bus"
+                                app:tint="@color/white" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/tv_get_in_duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-> 04 mins -> 232 Mtr"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_next_scheduled_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="NEXT SCHEDULED : 12:52 PM"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/barChart" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="6dp"
+                        android:text="Get Down Station"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_source"
+                        app:layout_constraintStart_toStartOf="@+id/tv_source"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_get_down_station"
+                        android:layout_width="285dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="1"
+                        android:layout_marginBottom="8dp"
+                        android:singleLine="true"
+                        android:text="CS-St Joseph Boys High School Museum Road"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mvc_destination_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#FAF9F9"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/mcv_container_get_in"
+                app:layout_constraintTop_toBottomOf="@+id/mcv_container_get_in">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="6dp"
+                        android:text="Destination"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_source"
+                        app:layout_constraintStart_toStartOf="@+id/tv_source"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_destination"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="1"
+                        android:layout_marginBottom="8dp"
+                        android:singleLine="true"
+                        android:text="Cafe Coffee Day - Barton Centre, MG Road"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
